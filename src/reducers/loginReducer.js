@@ -1,4 +1,4 @@
-import {IS_LOGGING_IN, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT} from '../actions'
+import { IS_LOGGING_IN, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT } from '../actions';
 
 /*
 State shape:
@@ -10,33 +10,33 @@ login: {
     },
 */
 
-export const loginReducer = (state, {type, payload}) => {
-    switch(type){
+export const loginReducer = (state, { type, payload }) => {
+    switch (type) {
         case IS_LOGGING_IN:
             return {
                 ...state,
                 isLoginLoading: true,
-                errorMessage: ''
-            }
+                errorMessage: '',
+            };
         case LOGIN_SUCCESS:
             return {
                 ...state,
                 isLoginLoading: false,
                 isLoggedIn: true,
-                welcomeMessage: payload
-            }
+                welcomeMessage: payload,
+            };
         case LOGIN_ERROR:
             return {
                 ...state,
                 isLoginLoading: false,
-                errorMessage: payload
-            }
+                errorMessage: payload,
+            };
         case LOGOUT:
             return {
                 ...state,
-                isLoggedIn: false
-            }
+                isLoggedIn: false,
+            };
         default:
-            return state
+            return state;
     }
-}
+};

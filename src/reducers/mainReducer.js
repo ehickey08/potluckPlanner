@@ -1,19 +1,28 @@
-import { loginReducer, usersReducer, eventsReducer, signUpReducer, eventReducer } from './index'
+import {
+    loginReducer,
+    usersReducer,
+    eventsReducer,
+    signUpReducer,
+    eventReducer,
+} from './index';
 
-export const mainReducer = ({login, signUp, event, users, events}, action) => ({
+export const mainReducer = (
+    { login, signUp, event, users, events },
+    action
+) => ({
     login: loginReducer(login, action),
     signUp: signUpReducer(signUp, action),
     event: eventReducer(event, action),
     users: usersReducer(users, action),
-    events: eventsReducer(events, action)
-})
+    events: eventsReducer(events, action),
+});
 
 export const initialState = {
     events: {
         data: [],
         errorMessage: '',
         isEventsLoading: false,
-        searchTerm: ''
+        searchTerm: '',
     },
     users: {
         data: [],
@@ -24,12 +33,12 @@ export const initialState = {
         isLoginLoading: false,
         isLoggedIn: false,
         errorMessage: '',
-        welcomeMessage: ''
+        welcomeMessage: '',
     },
-    signUp:{
+    signUp: {
         isSignUpLoading: false,
         isSignedUp: false,
-        errorMessage: ''
+        errorMessage: '',
     },
     event: {
         data: {
@@ -42,18 +51,22 @@ export const initialState = {
             address: '',
             city: '',
             state: '',
-            recipes: [{
-                recipe_name: '',
-                user_id: '',
-                full_name: ''
-            }],
-            guests: [{
-                user_id: '',
-                full_name: '',
-                attending: false
-            }]
+            recipes: [
+                {
+                    recipe_name: '',
+                    user_id: '',
+                    full_name: '',
+                },
+            ],
+            guests: [
+                {
+                    user_id: '',
+                    full_name: '',
+                    attending: false,
+                },
+            ],
         },
         isEventLoading: false,
-        errorMessage: ''
-    }
-}
+        errorMessage: '',
+    },
+};

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const WelcomeDiv = styled.div`
     display: flex;
@@ -10,15 +10,15 @@ export const WelcomeDiv = styled.div`
 
     span{
         display: block;
-        font-family: ${({theme}) => theme.poppinsFont};
+        font-family: ${({ theme }) => theme.poppinsFont};
         font-weight: 900;
-        font-size: ${({theme}) => theme.largeFont}
+        font-size: ${({ theme }) => theme.largeFont}
         line-height: 1.2;
         text-align: center;
-        color: ${({theme}) => theme.blue}
+        color: ${({ theme }) => theme.blue}
     }
     img{
         margin: 0 auto;
         width: 40%;
     }
-`
+`;

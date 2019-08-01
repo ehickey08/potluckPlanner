@@ -1,4 +1,5 @@
-import {GETTING_EVENT,
+import {
+    GETTING_EVENT,
     GOT_EVENT,
     GOT_EVENT_ERROR,
     ADDING_GUESTS,
@@ -19,7 +20,7 @@ import {GETTING_EVENT,
     UPDATING_RECIPE,
     UPDATED_RECIPE,
     UPDATE_RECIPE_ERROR,
-} from '../actions'
+} from '../actions';
 
 /*
 event: {
@@ -49,154 +50,153 @@ event: {
     }
 */
 
-
-export const eventReducer = (state, {type, payload}) => {
-    switch(type){
-    case GETTING_EVENT:
-        return {
-            ...state,
-            errorMessage: '',
-            isEventLoading: true,
-        }
-    case GOT_EVENT:
-        return {
-            ...state,
-            data: payload,
-            isEventLoading: false
-        }
-    case GOT_EVENT_ERROR:
-        return {
-            ...state,
-            isEventLoading: false,
-            errorMessage: payload
-        }
-    case ADDING_GUESTS:
-        return {
-            ...state,
-            errorMessage: '',
-            isEventLoading: true,
-        }
-    case ADDED_GUESTS:
-        return {
-            ...state,
-            data: {
-                ...state.data,
-                guests: payload
-            },
-            isEventLoading: false
-        }
-    case ADD_GUESTS_ERROR:
-        return {
-            ...state,
-            isEventLoading: false,
-            errorMessage: payload
-        }
-    case REMOVING_GUEST:
-        return {
-            ...state,
-            errorMessage: '',
-            isEventLoading: true,
-        }
-    case REMOVED_GUEST:
-        return {
-            ...state,
-            data: {
-                ...state.data,
-                guests: payload
-            },
-            isEventLoading: false
-        }
-    case REMOVE_GUEST_ERROR:
-        return {
-            ...state,
-            isEventLoading: false,
-            errorMessage: payload
-        }
-    case UPDATING_GUEST:
-        return {
-            ...state,
-            errorMessage: '',
-            isEventLoading: true,
-        }
-    case UPDATED_GUEST:
-        return {
-            ...state,
-            data: {
-                ...state.data,
-                guests: payload
-            },
-            isEventLoading: false
-        }
-    case UPDATE_GUEST_ERROR:
-        return {
-            ...state,
-            isEventLoading: false,
-            errorMessage: payload
-        }
-    case ADDING_RECIPES:
-        return {
-            ...state,
-            errorMessage: '',
-            isEventLoading: true,
-        }
-    case ADDED_RECIPES:
-        return {
-            ...state,
-            data: {
-                ...state.data,
-                recipes: payload
-            },
-            isEventLoading: false
-        }
-    case ADD_RECIPES_ERROR:
-        return {
-            ...state,
-            isEventLoading: false,
-            errorMessage: payload
-        }
-    case REMOVING_RECIPE:
-        return {
-            ...state,
-            errorMessage: '',
-            isEventLoading: true,
-        }
-    case REMOVED_RECIPE:
-        return {
-            ...state,
-            data: {
-                ...state.data,
-                recipes: payload
-            },
-            isEventLoading: false
-        }
-    case REMOVE_RECIPE_ERROR:
-        return {
-            ...state,
-            isEventLoading: false,
-            errorMessage: payload
-        }
-    case UPDATING_RECIPE:
-        return {
-            ...state,
-            errorMessage: '',
-            isEventLoading: true,
-        }
-    case UPDATED_RECIPE:
-        return {
-            ...state,
-            data: {
-                ...state.data,
-                recipes: payload
-            },
-            isEventLoading: false
-        }
-    case UPDATE_RECIPE_ERROR:
-        return {
-            ...state,
-            isEventLoading: false,
-            errorMessage: payload
-        }
+export const eventReducer = (state, { type, payload }) => {
+    switch (type) {
+        case GETTING_EVENT:
+            return {
+                ...state,
+                errorMessage: '',
+                isEventLoading: true,
+            };
+        case GOT_EVENT:
+            return {
+                ...state,
+                data: payload,
+                isEventLoading: false,
+            };
+        case GOT_EVENT_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
+        case ADDING_GUESTS:
+            return {
+                ...state,
+                errorMessage: '',
+                isEventLoading: true,
+            };
+        case ADDED_GUESTS:
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    guests: payload,
+                },
+                isEventLoading: false,
+            };
+        case ADD_GUESTS_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
+        case REMOVING_GUEST:
+            return {
+                ...state,
+                errorMessage: '',
+                isEventLoading: true,
+            };
+        case REMOVED_GUEST:
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    guests: payload,
+                },
+                isEventLoading: false,
+            };
+        case REMOVE_GUEST_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
+        case UPDATING_GUEST:
+            return {
+                ...state,
+                errorMessage: '',
+                isEventLoading: true,
+            };
+        case UPDATED_GUEST:
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    guests: payload,
+                },
+                isEventLoading: false,
+            };
+        case UPDATE_GUEST_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
+        case ADDING_RECIPES:
+            return {
+                ...state,
+                errorMessage: '',
+                isEventLoading: true,
+            };
+        case ADDED_RECIPES:
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    recipes: payload,
+                },
+                isEventLoading: false,
+            };
+        case ADD_RECIPES_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
+        case REMOVING_RECIPE:
+            return {
+                ...state,
+                errorMessage: '',
+                isEventLoading: true,
+            };
+        case REMOVED_RECIPE:
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    recipes: payload,
+                },
+                isEventLoading: false,
+            };
+        case REMOVE_RECIPE_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
+        case UPDATING_RECIPE:
+            return {
+                ...state,
+                errorMessage: '',
+                isEventLoading: true,
+            };
+        case UPDATED_RECIPE:
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    recipes: payload,
+                },
+                isEventLoading: false,
+            };
+        case UPDATE_RECIPE_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
         default:
-            return state
+            return state;
     }
-}
+};

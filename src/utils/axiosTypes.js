@@ -1,21 +1,21 @@
-import axios from "axios"
+import axios from 'axios';
 
 export const axiosWithAuth = () => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem('token');
     return axios.create({
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token
+            Authorization: token,
         },
-        baseURL: 'https://potluck-planner-bw.herokuapp.com'
-    })
-}
+        baseURL: 'https://potluck-planner-bw.herokuapp.com',
+    });
+};
 
-export const axiosInstance = () =>{
+export const axiosInstance = () => {
     return axios.create({
-        headers:{
-            'Content-Type': 'application/json'
+        headers: {
+            'Content-Type': 'application/json',
         },
-        baseURL: 'https://potluck-planner-bw.herokuapp.com'
-    })
-}
+        baseURL: 'https://potluck-planner-bw.herokuapp.com',
+    });
+};

@@ -1,4 +1,4 @@
-import { useContext } from 'react'
-import { StateContext } from '../contexts/StateContext'
+import { useContext } from 'react';
+import { StateContext } from '../contexts/StateContext';
 
-export const useStateValue = () => useContext(StateContext)
+export const useStateValue = () => useContext(StateContext);

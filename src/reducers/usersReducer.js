@@ -1,5 +1,4 @@
-import { GETTING_USERS, GOT_USERS, USERS_ERROR } from '../actions'
-
+import { GETTING_USERS, GOT_USERS, USERS_ERROR } from '../actions';
 
 /*
 State shape:
@@ -15,26 +14,26 @@ users: {
     },
 */
 
-export const usersReducer = (state, {type, payload}) => {
-    switch(type){
+export const usersReducer = (state, { type, payload }) => {
+    switch (type) {
         case GETTING_USERS:
             return {
                 ...state,
-                isUsersLoading: true
-            }
+                isUsersLoading: true,
+            };
         case GOT_USERS:
             return {
                 ...state,
                 isUsersLoading: false,
-                data: payload
-            }
+                data: payload,
+            };
         case USERS_ERROR:
             return {
                 ...state,
                 isUsersLoading: false,
-                errorMessage: payload
-            }
+                errorMessage: payload,
+            };
         default:
-            return state
+            return state;
     }
-}
+};

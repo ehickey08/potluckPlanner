@@ -1,18 +1,17 @@
-import React, { useState } from "react";
-import { signUpAction } from "../actions";
-import { useStateValue } from "../hooks/useStateValue";
-import { StyledSignUpForm, SignUpInput } from '../styled_components'
-
+import React, { useState } from 'react';
+import { signUpAction } from '../actions';
+import { useStateValue } from '../hooks/useStateValue';
+import { StyledSignUpForm, SignUpInput } from '../styled_components';
 
 const SignUpForm = () => {
     const [user, setUser] = useState({
-        username: "",
-        password: "",
-        full_name: "",
-        email: ""
+        username: '',
+        password: '',
+        full_name: '',
+        email: '',
     });
-    const [{signUp}, dispatch] = useStateValue();
-  
+    const [{ signUp }, dispatch] = useStateValue();
+
     const userInputHandler = event => {
         const name = event.target.name;
         const value = event.target.value;
@@ -25,55 +24,64 @@ const SignUpForm = () => {
                 e.preventDefault();
                 signUpAction(dispatch, user);
                 setUser({
-                    username: "",
-                    password: "",
-                    full_name: "",
-                    email: ""
-                })
-            }}
-        >
+                    username: '',
+                    password: '',
+                    full_name: '',
+                    email: '',
+                });
+            }}>
             <h1>Sign up</h1>
             <div className='signup_input_and_label'>
-                <label htmlFor="username"><i className="user icon"></i></label>
+                <label htmlFor='username'>
+                    <i className='user icon' />
+                </label>
                 <SignUpInput
-                    name="username"
-                    type="text"
+                    name='username'
+                    type='text'
                     onChange={event => userInputHandler(event)}
                     value={user.username}
-                    placeholder="Username"
+                    placeholder='Username'
                 />
             </div>
             <div className='signup_input_and_label'>
-                <label htmlFor='password'><i className="lock icon"></i></label>
+                <label htmlFor='password'>
+                    <i className='lock icon' />
+                </label>
                 <SignUpInput
-                    name="password"
-                    type="password"
+                    name='password'
+                    type='password'
                     onChange={event => userInputHandler(event)}
                     value={user.password}
-                    placeholder="Password"
+                    placeholder='Password'
                 />
             </div>
             <div className='signup_input_and_label'>
-                <label htmlFor="full_name"><i className="id card outline icon"></i></label>
+                <label htmlFor='full_name'>
+                    <i className='id card outline icon' />
+                </label>
                 <SignUpInput
-                    name="full_name"
-                    type="text"
+                    name='full_name'
+                    type='text'
                     onChange={event => userInputHandler(event)}
                     value={user.full_name}
-                    placeholder="Full Name"
+                    placeholder='Full Name'
                 />
             </div>
             <div className='signup_input_and_label'>
-                <label htmlFor="email"><i className="envelope icon"></i></label>
+                <label htmlFor='email'>
+                    <i className='envelope icon' />
+                </label>
                 <SignUpInput
-                    name="email"
-                    type="email"
+                    name='email'
+                    type='email'
                     onChange={event => userInputHandler(event)}
                     value={user.email}
-                    placeholder="E-Mail"
+                    placeholder='E-Mail'
                 />
             </div>
-            <button disabled={signUp.isSignUpLoading} type="submit">Register</button>
+            <button disabled={signUp.isSignUpLoading} type='submit'>
+                Register
+            </button>
         </StyledSignUpForm>
     );
 };

@@ -1,23 +1,22 @@
-import React, {useEffect } from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
-import { useLocalStorage } from '../hooks/useLocalStorage'
+import React, { useEffect } from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
-import LoginForm from '../components/LoginForm'
-import { LoginContainer, WelcomeDiv, SignUpDiv } from '../styled_components'
-import logo from '../PP_logo.png'
+import LoginForm from '../components/LoginForm';
+import { LoginContainer, WelcomeDiv, SignUpDiv } from '../styled_components';
+import logo from '../PP_logo.png';
 
-const LoginPage = (props) => {
-    const [token, ] = useLocalStorage('token')
-    
+const LoginPage = props => {
+    const [token] = useLocalStorage('token');
+
     useEffect(() => {
-        if(token)
-            props.history.push('/dashboard')
+        if (token) props.history.push('/dashboard');
     }, [token, props.history]);
 
     return (
         <LoginContainer>
             <WelcomeDiv>
-                <img src={logo} alt="logo" />
+                <img src={logo} alt='logo' />
                 <span>Potluck Planner</span>
             </WelcomeDiv>
             <LoginForm />
@@ -26,13 +25,7 @@ const LoginPage = (props) => {
                 <NavLink to='/signup'>Sign Up</NavLink>
             </SignUpDiv>
         </LoginContainer>
-    )
-}
+    );
+};
 
-export default withRouter(LoginPage)
-
-
-
-
-
-
+export default withRouter(LoginPage);

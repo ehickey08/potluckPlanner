@@ -1,15 +1,15 @@
-export * from './usersActions'
+export * from './usersActions';
 /* 
     function:
     -getUsers
 */
-export * from './loginActions'
+export * from './loginActions';
 /* 
     functions include:
     -loginAction
     -logout
 */
-export * from './specificEventActions'
+export * from './specificEventActions';
 /* 
     functions include:
     -getEvent (get all details for a specific event, including guests and recipes)
@@ -21,13 +21,13 @@ export * from './specificEventActions'
     -claimRecipe
 */
 
-export * from './signUpActions'
+export * from './signUpActions';
 /* 
     function:
     -signUpAction
 */
 
-export * from './generalEventsActions'
+export * from './generalEventsActions';
 /* 
     functions include:
     -getEvents (get all events associated with user)
