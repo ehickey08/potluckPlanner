@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useStateValue } from '../hooks/useStateValue';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+
 import { getEvents } from '../actions';
+import { useStateValue, useLocalStorage } from '../hooks';
 import EventCard from '../components/EventCard';
 import { EventListContainer } from '../styled_components';
-import { Search } from './Search';
+import { SearchEvents } from './SearchEvents';
 
 const EventList = () => {
     const [user_id] = useLocalStorage('user_id');
@@ -22,7 +22,7 @@ const EventList = () => {
 
     return (
         <>
-            <Search />
+            <SearchEvents />
             <EventListContainer>
                 {errorMessage && data.length < 1 && (
                     <h2 className='no_events'>

@@ -3,7 +3,7 @@ import { useStateValue } from '../hooks/useStateValue';
 import { addGuest } from '../actions/specificEventActions';
 import { getUsers } from '../actions';
 import { List, Label, Icon, Button } from 'semantic-ui-react';
-const Guests = props => {
+const GuestsSearch = props => {
     const [userSearch, setUserSearch] = useState('');
     const [displayedUsers, setDisplayedUsers] = useState([]);
 
@@ -71,4 +71,4 @@ const Guests = props => {
     );
 };
 
-export default Guests;
+export default GuestsSearch;

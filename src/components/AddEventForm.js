@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useStateValue } from '../hooks/useStateValue';
-import { addEvent } from '../actions';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { StyledInput } from '../styled_components';
 import moment from 'moment';
-import { StyledEventForm } from '../styled_components';
+
+import { addEvent } from '../actions';
+import { useStateValue, useLocalStorage } from '../hooks/useStateValue';
+import { StyledInput, StyledEventForm } from '../styled_components';
 
 const AddEventForm = props => {
     const today = moment(new Date()).format('YYYY-MM-DD');

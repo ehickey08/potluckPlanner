@@ -4,7 +4,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 import LoginForm from '../components/LoginForm';
 import { LoginContainer, WelcomeDiv, SignUpDiv } from '../styled_components';
-import logo from '../PP_logo.png';
+import logo from '../images/PP_logo.png';
 
 const LoginPage = props => {
     const [token] = useLocalStorage('token');

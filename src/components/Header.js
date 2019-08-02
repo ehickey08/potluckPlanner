@@ -1,13 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 import { logout } from '../actions';
 import { useStateValue } from '../hooks/useStateValue';
-import {
-    HeaderDiv,
-    HeaderTitle,
-    HeaderNavLinks,
-} from '../styled_components/Dashboard/Header';
-import logo from '../PP_logo.png';
+import { HeaderDiv, HeaderTitle, HeaderNavLinks } from '../styled_components';
+import logo from '../images/PP_logo.png';
 
 const Header = () => {
     const [, dispatch] = useStateValue();
