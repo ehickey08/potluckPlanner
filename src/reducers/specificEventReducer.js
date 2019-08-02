@@ -20,6 +20,7 @@ import {
     UPDATING_RECIPE,
     UPDATED_RECIPE,
     UPDATE_RECIPE_ERROR,
+    RESET_EVENT_ERROR,
 } from '../actions';
 
 /*
@@ -195,6 +196,11 @@ export const eventReducer = (state, { type, payload }) => {
                 ...state,
                 isEventLoading: false,
                 errorMessage: payload,
+            };
+        case RESET_EVENT_ERROR:
+            return {
+                ...state,
+                errorMessage: '',
             };
         default:
             return state;

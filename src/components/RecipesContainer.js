@@ -18,7 +18,7 @@ const RecipesContainer = ({ recipes, user_id, eventID, isHost }) => {
 
     return (
         <>
-            <img src={headerImg} style={{ width: '10%' }} />
+            <img src={headerImg} alt='Yummy food!' style={{ width: '10%' }} />
             Choose a dish
             {recipes.length > 0 &&
                 recipes.map(recipe => (
@@ -26,6 +26,7 @@ const RecipesContainer = ({ recipes, user_id, eventID, isHost }) => {
                         recipe={recipe}
                         user_id={user_id}
                         eventID={eventID}
+                        key={recipe.recipe_name}
                     />
                 ))}
             {isHost && (

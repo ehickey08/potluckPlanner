@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../styled_components/device';
+import { device } from '../device';
 
 export const SearchInput = styled.input`
     width: 400px;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 
 import { addEvent } from '../actions';
-import { useStateValue, useLocalStorage } from '../hooks/useStateValue';
+import { useStateValue, useLocalStorage } from '../hooks';
 import { StyledInput, StyledEventForm } from '../styled_components';
 
 const AddEventForm = props => {

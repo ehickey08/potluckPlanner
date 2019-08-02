@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useStateValue } from '../hooks/useStateValue';
 import { updateEvent } from '../actions';
-import { Input } from 'semantic-ui-react';
 import { getEvent } from '../actions';
 import moment from 'moment';
 import {
@@ -22,7 +21,7 @@ const UpdateEventForm = props => {
         state: '',
     });
 
-    const [{ event }, dispatch] = useStateValue();
+    const [, dispatch] = useStateValue();
     let eventID = props.match.params.eventID;
 
     useEffect(() => {

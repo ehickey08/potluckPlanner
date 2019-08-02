@@ -5,7 +5,7 @@ import Guest from './Guest';
 const GuestsContainer = ({ guests, organizer, eventID }) => {
     return (
         <div>
-            <img src={guestHeaderImg} style={{ width: '10%' }} />
+            <img src={guestHeaderImg} alt='Guests having fun!' style={{ width: '10%' }} />
             <h3>Guests</h3>
             {guests.map(guest => {
                 return (

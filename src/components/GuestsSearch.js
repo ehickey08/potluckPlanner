@@ -1,72 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { useStateValue } from '../hooks/useStateValue';
-import { addGuest } from '../actions/specificEventActions';
-import { getUsers } from '../actions';
-import { List, Label, Icon, Button } from 'semantic-ui-react';
-const GuestsSearch = props => {
+
+import { useStateValue } from '../hooks';
+import { getUsers, RESET_EVENT_ERROR } from '../actions';
+import User from './User';
+
+const GuestsSearch = ({ eventID }) => {
     const [userSearch, setUserSearch] = useState('');
-    const [displayedUsers, setDisplayedUsers] = useState([]);
+    const [filteredGuests, setFilteredGuests] = useState([]);
+    const [{ users, event }, dispatch] = useStateValue();
 
-    const [{ users }, dispatch] = useStateValue();
-
-    const searchHandler = event => {
-        setUserSearch(event.target.value);
-    };
-
-    const userCompare = toCompare => {
-        let searchGuests = users.data;
-        console.log(users);
-        searchGuests = searchGuests.filter(user =>
-            user.full_name.toLowerCase().includes(toCompare.toLowerCase())
+    useEffect(() => {
+        setFilteredGuests(
+            users.data.filter(user =>
+                user.full_name.toLowerCase().includes(userSearch.toLowerCase())
+            )
         );
-        setDisplayedUsers(searchGuests);
-    };
+    }, [userSearch, users.data]);
 
     useEffect(() => {
         getUsers(dispatch);
+    }, [dispatch]);
+
+    useEffect(() => {
+        dispatch({ type: RESET_EVENT_ERROR });
     }, [userSearch]);
 
     return (
         <div>
-            <form
-                onSubmit={e => {
-                    e.preventDefault();
-                    userCompare(userSearch);
-                }}>
-                <input
-                    value={userSearch}
-                    style={{ lineHeight: '3rem' }}
-                    placeholder='Search users'
-                    onChange={event => searchHandler(event)}
-                />
-                <Button size='huge' color='twitter'>
-                    Submit
-                </Button>
-            </form>
-            <List>
-                {displayedUsers.map(user => {
-                    return (
-                        <List.Item>
-                            <Label
-                                key={user.user_id}
-                                size='massive'
-                                onClick={e => {
-                                    e.preventDefault();
-                                    addGuest(dispatch, props.eventID, {
-                                        user_id: user.user_id,
-                                        attending: false,
-                                    });
-                                }}>
-                                <Icon name='user' /> {user.full_name} <br />
-                                <p style={{ color: '#c2bfb8' }}>
-                                    {' '}
-                                    {user.username}
-                                </p>
-                            </Label>
-                        </List.Item>
-                    );
-                })}
-            </List>
+            <input
+                value={userSearch}
+                placeholder='Search users'
+                onChange={e => setUserSearch(e.target.value)}
+            />
+            {event.errorMessage && <h2>{event.errorMessage}</h2>}
+            <div>
+                {userSearch &&
+                    filteredGuests.map(user => (
+                        <User
+                            key={user.user_id}
+                            user={user}
+                            eventID={eventID}
+                        />
+                    ))}
+            </div>
         </div>
     );
 };

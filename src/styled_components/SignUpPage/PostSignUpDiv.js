@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from '../device';
 
 export const PostSignUpDiv = styled.div`
     display: flex;
