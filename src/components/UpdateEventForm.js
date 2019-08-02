@@ -19,6 +19,7 @@ const UpdateEventForm = props => {
         address: '',
         city: '',
         state: '',
+        event_id: ''
     });
 
     const [, dispatch] = useStateValue();
@@ -36,7 +37,7 @@ const UpdateEventForm = props => {
         const value = e.target.value;
         setEvent({ ...editEvent, [name]: value });
     };
-
+    
     return (
         <UpdateContainer>
             <StyledEventForm
@@ -51,6 +52,7 @@ const UpdateEventForm = props => {
                         address: editEvent.address,
                         city: editEvent.city,
                         state: editEvent.state,
+                        event_id: editEvent.event_id
                     });
                     setEvent({
                         event_name: '',

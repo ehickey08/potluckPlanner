@@ -27,7 +27,7 @@ const EventList = () => {
         );
         return Boolean(matches.map(match => match.user_id === id).length);
     };
-
+    
     let organizers = data.map(event =>
         users.data.find(user => {
             if (user.user_id === event.organizer_id)
@@ -42,7 +42,6 @@ const EventList = () => {
                 .includes(events.searchTerm.toLowerCase()) ||
             checkOrganizers(event.organizer_id)
     );
-
     let eventsToMap = events.searchTerm ? filteredData : data;
 
     return (

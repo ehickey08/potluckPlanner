@@ -26,11 +26,12 @@ const EventCard = ({ event, match, organizers }) => {
     const { url } = match;
     const [, dispatch] = useStateValue();
     const [user_id] = useLocalStorage('user_id');
-
+    
     let eventOrganizer =
-        organizers.length > 0 &&
+        organizers[0] &&
         organizers.filter(user => user.user_id === organizer_id)[0];
     let isHost = user_id === organizer_id;
+    const eventTime = moment(time, 'HH:mm:ss a').format('LT');
 
     return (
         <StyledEventCard>
@@ -54,7 +55,7 @@ const EventCard = ({ event, match, organizers }) => {
                 <CardCol>
                     <div className='card-organizer'>
                         <span className='card-field'>Organized By: </span>
-                        {eventOrganizer.full_name}
+                        {eventOrganizer && eventOrganizer.full_name}
                     </div>
                     <div className='card-location'>
                         <span className='card-field'>Location: </span>
@@ -67,7 +68,7 @@ const EventCard = ({ event, match, organizers }) => {
                         {moment(date).format('LL')}
                     </div>
                     <div className='card-time'>
-                        <span className='card-field'>Time: </span> {time}
+                        <span className='card-field'>Time: </span> {eventTime}
                     </div>
                 </CardCol>
             </CardDetails>
