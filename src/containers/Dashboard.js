@@ -13,7 +13,6 @@ const Dashboard = props => {
     return (
         <>
             <Header />
-            <br />
             <PrivateRoute
                 exact
                 path={`${path}`}

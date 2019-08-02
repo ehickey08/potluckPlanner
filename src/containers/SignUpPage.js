@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useStateValue } from '../hooks/useStateValue';
+import undraw from '../images/undraw_having_fun_iais.svg';
+
 import { SIGNUP_OVER } from '../actions';
+import { useStateValue } from '../hooks/useStateValue';
 import SignUpForm from '../components/SignUpForm';
 import { SignUpContainer, PostSignUpDiv } from '../styled_components';
 
@@ -30,7 +32,7 @@ const SignUpPage = () => {
                 )}
             </div>
             <div className='image sign_up_inner'>
-                <img src='./undraw_having_fun_iais.svg' alt='family fun' />
+                <img src={undraw} alt='family fun' />
                 <NavLink to='/'>I am already a member</NavLink>
             </div>
         </SignUpContainer>

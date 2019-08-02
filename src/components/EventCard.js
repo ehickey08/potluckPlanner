@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
-import { useStateValue } from '../hooks/useStateValue';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { getUsers } from './../actions/usersActions';
-import { deleteEvent, getEvents } from '../actions/generalEventsActions';
-import { changeAttendance, removeGuest } from '../actions/specificEventActions';
 import moment from 'moment';
 import { Popup } from 'semantic-ui-react';
+
+import { useStateValue, useLocalStorage } from '../hooks';
+import {
+    getEvents,
+    deleteEvent,
+    changeAttendance,
+    removeGuest,
+} from '../actions';
 import {
     StyledEventCard,
     StyledCardHeader,
@@ -17,7 +20,7 @@ import {
     LeaveButton,
 } from '../styled_components/Dashboard/EventCard';
 
-const EventCard = props => {
+const EventCard = ({event, match}) => {
     const {
         event_name,
         organizer_id,
@@ -26,14 +29,12 @@ const EventCard = props => {
         city,
         state,
         event_id,
-    } = props.event;
-    const { url } = props.match;
+    } = event;
+    const { url } = match;
     const [{ users }, dispatch] = useStateValue();
     const [user_id] = useLocalStorage('user_id');
 
-    useEffect(() => {
-        getUsers(dispatch);
-    }, [props.event, dispatch]);
+    
 
     let username;
     users.data.forEach(user => {
@@ -68,7 +69,7 @@ const EventCard = props => {
 
                     {/*if a user isnt the organizer, show option to accept/decline. If accept, show option to leave */}
                     {user_id !== organizer_id ? (
-                        props.event.attending ? (
+                        event.attending ? (
                             <LeaveButton
                                 onClick={() =>
                                     removeGuest(dispatch, event_id, {

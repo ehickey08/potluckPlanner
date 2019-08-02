@@ -23,7 +23,7 @@ const GuestsSearch = ({ eventID }) => {
 
     useEffect(() => {
         dispatch({ type: RESET_EVENT_ERROR });
-    }, [userSearch]);
+    }, [userSearch, dispatch]);
 
     return (
         <div>
