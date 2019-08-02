@@ -15,12 +15,12 @@ const RecipesContainer = ({ recipes, user_id, eventID, isHost }) => {
         addRecipe(dispatch, eventID, recipe);
         setRecipe({ recipe_name: '' });
     };
-
+    
     return (
         <>
             <img src={headerImg} alt='Yummy food!' style={{ width: '10%' }} />
             Choose a dish
-            {recipes.length > 0 &&
+            {typeof recipes==='object' &&
                 recipes.map(recipe => (
                     <Recipe
                         recipe={recipe}

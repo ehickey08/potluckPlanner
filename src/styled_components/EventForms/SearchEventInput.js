@@ -35,3 +35,10 @@ export const SearchInput = styled.input`
         width: 250px;
     }
 `;
+
+export const SearchNote = styled.h3`
+font-family: ${({ theme }) => theme.poppinsFont};
+font-size: ${({ theme }) => theme.tinyFont};
+color: ${({ theme }) => theme.blue};
+text-align: center;
+`
