@@ -1,8 +1,8 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
 
-import { claimRecipe, removeRecipe } from '../actions';
-import { useStateValue } from '../hooks';
+import { claimRecipe, removeRecipe } from '../../actions';
+import { useStateValue } from '../../hooks';
 
 const Recipe = ({ recipe, user_id, eventID }) => {
     const [, dispatch] = useStateValue();

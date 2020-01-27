@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import headerImg from '../images/brooke-lark-nTZOILVZuOg-unsplash.jpg';
+import headerImg from '../../images/brooke-lark-nTZOILVZuOg-unsplash.jpg';
 
-import { addRecipe } from '../actions';
-import { useStateValue } from '../hooks';
+import { addRecipe } from '../../actions';
+import { useStateValue } from '../../hooks';
 
 import Recipe from './Recipe';
 

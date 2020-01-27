@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { signUpAction } from '../actions';
-import { useStateValue } from '../hooks/useStateValue';
-import { StyledSignUpForm, SignUpInput } from '../styled_components';
+import { signUpAction } from '../../actions';
+import { useStateValue } from '../../hooks/useStateValue';
+import { StyledSignUpForm, SignUpInput } from '../../styled_components';
 
 const SignUpForm = () => {
     const [user, setUser] = useState({

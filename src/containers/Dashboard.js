@@ -2,11 +2,11 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { PrivateRoute } from '../utils/PrivateRoute';
 
-import Header from '../components/Header';
+import Header from '../components/DashboardComponents/Header';
 import EventPage from '../containers/EventPage';
-import AddEventForm from '../components/AddEventForm';
-import EventList from '../components/EventList';
-import UpdateEventForm from '../components/UpdateEventForm';
+import AddEventForm from './AddEventPage';
+import EventList from './EventList';
+import UpdateEventForm from './UpdateEventPage';
 
 const Dashboard = props => {
     const { path } = props.match;

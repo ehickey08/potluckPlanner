@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
 
-import { deleteEvent } from '../actions';
-import { useStateValue } from '../hooks';
+import { deleteEvent } from '../../actions';
+import { useStateValue } from '../../hooks';
 
 const EditEventContainer = ({ url, eventID, history }) => {
     const [, dispatch] = useStateValue();

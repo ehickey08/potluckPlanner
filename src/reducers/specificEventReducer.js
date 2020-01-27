@@ -20,7 +20,6 @@ import {
     UPDATING_RECIPE,
     UPDATED_RECIPE,
     UPDATE_RECIPE_ERROR,
-    RESET_EVENT_ERROR,
 } from '../actions';
 
 /*
@@ -54,71 +53,39 @@ event: {
 export const eventReducer = (state, { type, payload }) => {
     switch (type) {
         case GETTING_EVENT:
+        case ADDING_GUESTS:
+        case REMOVING_GUEST:
+        case UPDATING_GUEST:
+        case ADDING_RECIPES:
+        case REMOVING_RECIPE:
+        case UPDATING_RECIPE:
             return {
                 ...state,
                 errorMessage: '',
                 isEventLoading: true,
             };
+
+        case GOT_EVENT_ERROR:
+        case ADD_GUESTS_ERROR:
+        case REMOVE_GUEST_ERROR:
+        case UPDATE_GUEST_ERROR:
+        case ADD_RECIPES_ERROR:
+        case REMOVE_RECIPE_ERROR:
+        case UPDATE_RECIPE_ERROR:
+            return {
+                ...state,
+                isEventLoading: false,
+                errorMessage: payload,
+            };
+
         case GOT_EVENT:
             return {
                 ...state,
                 data: payload,
                 isEventLoading: false,
             };
-        case GOT_EVENT_ERROR:
-            return {
-                ...state,
-                isEventLoading: false,
-                errorMessage: payload,
-            };
-        case ADDING_GUESTS:
-            return {
-                ...state,
-                errorMessage: '',
-                isEventLoading: true,
-            };
         case ADDED_GUESTS:
-            return {
-                ...state,
-                data: {
-                    ...state.data,
-                    guests: payload,
-                },
-                isEventLoading: false,
-            };
-        case ADD_GUESTS_ERROR:
-            return {
-                ...state,
-                isEventLoading: false,
-                errorMessage: payload,
-            };
-        case REMOVING_GUEST:
-            return {
-                ...state,
-                errorMessage: '',
-                isEventLoading: true,
-            };
         case REMOVED_GUEST:
-            return {
-                ...state,
-                data: {
-                    ...state.data,
-                    guests: payload,
-                },
-                isEventLoading: false,
-            };
-        case REMOVE_GUEST_ERROR:
-            return {
-                ...state,
-                isEventLoading: false,
-                errorMessage: payload,
-            };
-        case UPDATING_GUEST:
-            return {
-                ...state,
-                errorMessage: '',
-                isEventLoading: true,
-            };
         case UPDATED_GUEST:
             return {
                 ...state,
@@ -128,60 +95,8 @@ export const eventReducer = (state, { type, payload }) => {
                 },
                 isEventLoading: false,
             };
-        case UPDATE_GUEST_ERROR:
-            return {
-                ...state,
-                isEventLoading: false,
-                errorMessage: payload,
-            };
-        case ADDING_RECIPES:
-            return {
-                ...state,
-                errorMessage: '',
-                isEventLoading: true,
-            };
         case ADDED_RECIPES:
-            return {
-                ...state,
-                data: {
-                    ...state.data,
-                    recipes: payload,
-                },
-                isEventLoading: false,
-            };
-        case ADD_RECIPES_ERROR:
-            return {
-                ...state,
-                isEventLoading: false,
-                errorMessage: payload,
-            };
-        case REMOVING_RECIPE:
-            return {
-                ...state,
-                errorMessage: '',
-                isEventLoading: true,
-            };
         case REMOVED_RECIPE:
-            return {
-                ...state,
-                data: {
-                    ...state.data,
-                    recipes: payload,
-                },
-                isEventLoading: false,
-            };
-        case REMOVE_RECIPE_ERROR:
-            return {
-                ...state,
-                isEventLoading: false,
-                errorMessage: payload,
-            };
-        case UPDATING_RECIPE:
-            return {
-                ...state,
-                errorMessage: '',
-                isEventLoading: true,
-            };
         case UPDATED_RECIPE:
             return {
                 ...state,
@@ -191,13 +106,7 @@ export const eventReducer = (state, { type, payload }) => {
                 },
                 isEventLoading: false,
             };
-        case UPDATE_RECIPE_ERROR:
-            return {
-                ...state,
-                isEventLoading: false,
-                errorMessage: payload,
-            };
-        case RESET_EVENT_ERROR:
+        case 'RESET_EVENT_ERROR':
             return {
                 ...state,
                 errorMessage: '',

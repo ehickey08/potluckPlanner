@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 
 import { getEvents, getUsers } from '../actions';
 import { useStateValue, useLocalStorage } from '../hooks';
-import EventCard from '../components/EventCard';
+import EventCard from '../components/DashboardComponents/EventCard';
 import { EventListContainer, SearchNote } from '../styled_components';
-import { SearchEvents } from './SearchEvents';
+import { SearchEvents } from '../components/DashboardComponents/SearchEvents';
 
 const EventList = () => {
     const [user_id] = useLocalStorage('user_id');

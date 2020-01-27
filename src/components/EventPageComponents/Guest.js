@@ -1,8 +1,8 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
 
-import { removeGuest } from '../actions';
-import { useStateValue } from '../hooks';
+import { removeGuest } from '../../actions';
+import { useStateValue } from '../../hooks';
 
 const Guest = ({ guest, organizer, eventID }) => {
     const [, dispatch] = useStateValue();

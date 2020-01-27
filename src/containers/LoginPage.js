@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/LoginComponents/LoginForm';
 import { LoginContainer, WelcomeDiv, SignUpDiv } from '../styled_components';
 import logo from '../images/PP_logo.png';
 

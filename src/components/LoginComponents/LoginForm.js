@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { loginAction } from '../actions/loginActions';
-import { useStateValue } from '../hooks/useStateValue';
+import { loginAction } from '../../actions/loginActions';
+import { useStateValue } from '../../hooks/useStateValue';
 
-import { StyledLoginForm, LoginButton } from '../styled_components';
+import { StyledLoginForm, LoginButton } from '../../styled_components';
 
 const LoginForm = props => {
     const [user, setUser] = useState({

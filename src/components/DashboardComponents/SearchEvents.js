@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { UPDATE_SEARCH } from '../actions';
-import { useStateValue } from '../hooks/useStateValue';
-import { SearchInput } from '../styled_components';
+import { UPDATE_SEARCH } from '../../actions';
+import { useStateValue } from '../../hooks/useStateValue';
+import { SearchInput } from '../../styled_components';
 
 export const SearchEvents = () => {
     const [search, setSearch] = useState('');

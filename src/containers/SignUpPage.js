@@ -4,7 +4,7 @@ import undraw from '../images/undraw_having_fun_iais.svg';
 
 import { SIGNUP_OVER } from '../actions';
 import { useStateValue } from '../hooks/useStateValue';
-import SignUpForm from '../components/SignUpForm';
+import SignUpForm from '../components/SignUpComponents/SignUpForm';
 import { SignUpContainer, PostSignUpDiv } from '../styled_components';
 
 const SignUpPage = () => {

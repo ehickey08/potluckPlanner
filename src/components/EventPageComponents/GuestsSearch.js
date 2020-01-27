@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { useStateValue } from '../hooks';
-import { getUsers, RESET_EVENT_ERROR } from '../actions';
+import { useStateValue } from '../../hooks';
+import { getUsers } from '../../actions';
 import User from './User';
 
 const GuestsSearch = ({ eventID }) => {
@@ -22,7 +22,7 @@ const GuestsSearch = ({ eventID }) => {
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch({ type: RESET_EVENT_ERROR });
+        dispatch({ type: "RESET_EVENT_ERROR" });
     }, [userSearch, dispatch]);
 
     return (

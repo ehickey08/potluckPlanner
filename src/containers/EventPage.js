@@ -4,11 +4,11 @@ import { withRouter } from 'react-router-dom';
 import { useStateValue, useLocalStorage } from '../hooks';
 import { getEvent } from '../actions';
 
-import EventInfo from '../components/EventInfo';
-import GuestsContainer from '../components/GuestsContainer';
-import EditEventContainer from '../components/EditEventContainer';
-import RecipesContainer from '../components/RecipesContainer';
-import GuestsSearch from '../components/GuestsSearch';
+import EventInfo from '../components/EventPageComponents/EventInfo';
+import GuestsContainer from '../components/EventPageComponents/GuestsContainer';
+import EditEventContainer from '../components/EventPageComponents/EditEventContainer';
+import RecipesContainer from '../components/EventPageComponents/RecipesContainer';
+import GuestsSearch from '../components/EventPageComponents/GuestsSearch';
 
 const EventPage = ({ match, history }) => {
     let eventID = match.params.eventID;

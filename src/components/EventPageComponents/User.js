@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
-import { useStateValue } from '../hooks';
-import { addGuest } from '../actions';
+import { useStateValue } from '../../hooks';
+import { addGuest } from '../../actions';
 
 const User = ({ user, eventID }) => {
     const [, dispatch] = useStateValue();

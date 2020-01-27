@@ -18,17 +18,6 @@ export const mainReducer = (
 });
 
 export const initialState = {
-    events: {
-        data: [],
-        errorMessage: '',
-        isEventsLoading: false,
-        searchTerm: '',
-    },
-    users: {
-        data: [],
-        errorMessage: '',
-        isUsersLoading: false,
-    },
     login: {
         isLoginLoading: false,
         isLoggedIn: false,
@@ -68,5 +57,16 @@ export const initialState = {
         },
         isEventLoading: false,
         errorMessage: '',
+    },
+    events: {
+        data: [],
+        errorMessage: '',
+        isEventsLoading: false,
+        searchTerm: '',
+    },
+    users: {
+        data: [],
+        errorMessage: '',
+        isUsersLoading: false,
     },
 };

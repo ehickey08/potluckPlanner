@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import moment from 'moment';
 
-import { useStateValue, useLocalStorage } from '../hooks';
+import { useStateValue, useLocalStorage } from '../../hooks';
 import {
     StyledEventCard,
     StyledCardHeader,
@@ -10,7 +10,7 @@ import {
     CardDetails,
     CardCol,
     CardButtons,
-} from '../styled_components/Dashboard/EventCard';
+} from '../../styled_components/Dashboard/EventCard';
 import { HostButtons, GuestButtons } from './Buttons';
 
 const EventCard = ({ event, match, organizers }) => {

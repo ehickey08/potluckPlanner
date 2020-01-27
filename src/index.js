@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router } from 'react-router-dom';
+
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import 'semantic-ui-css/semantic.min.css';
+import 'antd/dist/antd.css';
+
 import App from './App';
 import StateProvider from './utils/StateProvider';
 import { mainReducer, initialState } from './reducers/mainReducer';
-import 'semantic-ui-css/semantic.min.css';
-import './index.css';
-import * as reset from './styles/reset.css';
-import * as global from './styles/global.css';
+import * as reset from './styling/reset.css';
+import * as global from './styling/global.css';
 
 const GlobalStyle = createGlobalStyle`
     ${reset} 
