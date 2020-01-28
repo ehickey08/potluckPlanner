@@ -4,6 +4,7 @@ import RecipesContainer from '../components/EventPageComponents/RecipesContainer
 import {addRecipe} from '../actions'
 
 jest.mock('../actions')
+afterEach(cleanup)
 
 describe('Recipes Container', () => {
     it('properly renders as host', () => {

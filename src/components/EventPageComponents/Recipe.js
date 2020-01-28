@@ -13,6 +13,7 @@ const Recipe = ({ recipe, user_id, eventID }) => {
             <Icon
                 size='small'
                 name={recipe.full_name ? 'times' : 'check'}
+                aria-label={recipe.full_name ? 'unclaim' : 'claim'}
                 onClick={() =>
                     claimRecipe(dispatch, eventID, {
                         recipe_name: recipe.recipe_name,
