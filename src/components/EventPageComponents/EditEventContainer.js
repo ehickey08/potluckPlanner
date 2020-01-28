@@ -4,12 +4,13 @@ import { Icon } from 'semantic-ui-react';
 
 import { deleteEvent } from '../../actions';
 import { useStateValue } from '../../hooks';
+import { EditContainer } from '../../styled_components/EventPage/EventContainers';
 
 const EditEventContainer = ({ url, eventID, history }) => {
     const [, dispatch] = useStateValue();
     return (
-        <>
-            <NavLink to={`${url}/update`}>Edit Event</NavLink>
+        <EditContainer>
+            <button><NavLink to={`${url}/update`}>Edit Event</NavLink></button>
             <button
                 onClick={e => {
                     e.preventDefault();
@@ -18,7 +19,7 @@ const EditEventContainer = ({ url, eventID, history }) => {
                 }}>
                 <Icon name='trash alternate' />
             </button>
-        </>
+        </EditContainer>
     );
 };
 

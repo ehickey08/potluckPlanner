@@ -33,7 +33,7 @@ const SignUpPage = () => {
             </div>
             <div className='image sign_up_inner'>
                 <img src={undraw} alt='family fun' />
-                <NavLink to='/'>I am already a member</NavLink>
+                <NavLink to='/'>I am a member</NavLink>
             </div>
         </SignUpContainer>
     );

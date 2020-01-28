@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <HeaderDiv>
             <HeaderTitle>
-                <img src={logo} alt='logo' /> Potluck Planner
+                <img src={logo} alt='Potluck Planner Logo' /> Potluck Planner
             </HeaderTitle>
             <HeaderNavLinks>
                 <NavLink to='/dashboard'>Home</NavLink>

@@ -3,7 +3,8 @@ import { device } from '../device';
 
 export const StyledEventCard = styled.div`
     width: 500px
-    height: 165px;
+    height: fit-content;
+    min-height: 125px;
     border: 2px solid ${({ theme }) => theme.blue};
     border-radius: 15px;
     display: flex;
@@ -24,10 +25,6 @@ export const StyledEventCard = styled.div`
     @media ${device.mobileL} {
       max-width: 100%;
     }
-
-    @media ${device.mobileS} {
-      font-size: 1.5rem;
-    }
     `;
 
 export const CardTop = styled.div`
@@ -39,12 +36,24 @@ export const CardDetails = styled.div`
     display: flex;
     justify-content: space-between;
     height: 50%;
+
+    @media ${device.tablet} {
+        flex-direction: column
+    }
 `;
 
 export const CardCol = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    
+
+    @media ${device.tablet} {
+        text-align: center;
+        div{
+            margin: 5px 0
+        }
+    }
 `;
 
 export const CardButtons = styled.div`

@@ -3,7 +3,7 @@ import { device } from '../device';
 
 export const UpdateContainer = styled.div`
     display: flex;
-    width: 1200px;
+    max-width: 800px;
     height: 800px;
     justify-content: space-evenly;
     align-items: center;

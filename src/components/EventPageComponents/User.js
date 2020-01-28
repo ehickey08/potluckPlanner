@@ -2,12 +2,13 @@ import React from 'react';
 import { Icon } from 'semantic-ui-react';
 import { useStateValue } from '../../hooks';
 import { addGuest } from '../../actions';
+import { StyledUserContainer } from '../../styled_components/EventPage/EventContainers';
 
 const User = ({ user, eventID }) => {
     const [, dispatch] = useStateValue();
 
     return (
-        <div
+        <StyledUserContainer
             onClick={() =>
                 addGuest(dispatch, eventID, {
                     user_id: user.user_id,
@@ -15,9 +16,9 @@ const User = ({ user, eventID }) => {
                 })
             }>
             <Icon name='user' />
-            {user.full_name}
-            {user.username}
-        </div>
+            <span>{user.full_name}</span>
+            <span>{user.username}</span>
+        </StyledUserContainer>
     );
 };
 

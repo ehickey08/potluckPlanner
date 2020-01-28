@@ -5,6 +5,7 @@ import { addRecipe } from '../../actions';
 import { useStateValue } from '../../hooks';
 
 import Recipe from './Recipe';
+import { StyledRecipesContainer } from '../../styled_components/EventPage/EventContainers';
 
 const RecipesContainer = ({ recipes, user_id, eventID, isHost }) => {
     const [recipe, setRecipe] = useState({ recipe_name: '' });
@@ -15,12 +16,12 @@ const RecipesContainer = ({ recipes, user_id, eventID, isHost }) => {
         addRecipe(dispatch, eventID, recipe);
         setRecipe({ recipe_name: '' });
     };
-    
+
     return (
-        <>
-            <img src={headerImg} alt='Yummy food!' style={{ width: '10%' }} />
-            Choose a dish
-            {typeof recipes==='object' &&
+        <StyledRecipesContainer>
+            <img src={headerImg} alt='Yummy food!' />
+            <h3>Choose a dish</h3>
+            {typeof recipes === 'object' &&
                 recipes.map(recipe => (
                     <Recipe
                         recipe={recipe}
@@ -42,7 +43,7 @@ const RecipesContainer = ({ recipes, user_id, eventID, isHost }) => {
                     <button onSubmit={e => addNewRecipe(e)}>Add Dish</button>
                 </form>
             )}
-        </>
+        </StyledRecipesContainer>
     );
 };
 

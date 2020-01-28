@@ -3,13 +3,14 @@ import { Icon } from 'semantic-ui-react';
 
 import { removeGuest } from '../../actions';
 import { useStateValue } from '../../hooks';
+import { StyledGuestContainer } from '../../styled_components/EventPage/EventContainers';
 
 const Guest = ({ guest, organizer, eventID }) => {
     const [, dispatch] = useStateValue();
     let response = guest.attending ? 'Attending' : 'Invited';
 
     return (
-        <div>
+        <StyledGuestContainer>
             <h2>{`${guest.full_name} - ${response}`}</h2>
             {guest.user_id !== organizer && (
                 <Icon
@@ -24,7 +25,7 @@ const Guest = ({ guest, organizer, eventID }) => {
                     }
                 />
             )}
-        </div>
+        </StyledGuestContainer>
     );
 };
 

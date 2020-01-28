@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from '../device';
 
 export const StyledEventForm = styled.form`
-    width: 800px;
+    max-width: 800px;
     margin: 25px auto;
     display: flex;
     flex-direction: column;

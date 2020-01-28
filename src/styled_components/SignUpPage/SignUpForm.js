@@ -55,6 +55,10 @@ export const StyledSignUpForm = styled.form`
         &:hover {
             background: ${({ theme }) => theme.darkBlue};
         }
+
+        @media ${device.tablet}{
+            margin: 0 auto;
+        }
     }
 `;
 

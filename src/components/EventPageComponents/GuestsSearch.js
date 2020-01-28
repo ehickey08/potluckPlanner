@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useStateValue } from '../../hooks';
 import { getUsers } from '../../actions';
 import User from './User';
+import { StyledGuestSearchContainer } from '../../styled_components/EventPage/EventContainers';
 
 const GuestsSearch = ({ eventID }) => {
     const [userSearch, setUserSearch] = useState('');
@@ -26,7 +27,7 @@ const GuestsSearch = ({ eventID }) => {
     }, [userSearch, dispatch]);
 
     return (
-        <div>
+        <StyledGuestSearchContainer>
             <input
                 value={userSearch}
                 placeholder='Search users'
@@ -43,7 +44,7 @@ const GuestsSearch = ({ eventID }) => {
                         />
                     ))}
             </div>
-        </div>
+        </StyledGuestSearchContainer>
     );
 };
 

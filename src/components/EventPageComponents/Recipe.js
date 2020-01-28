@@ -3,12 +3,13 @@ import { Icon } from 'semantic-ui-react';
 
 import { claimRecipe, removeRecipe } from '../../actions';
 import { useStateValue } from '../../hooks';
+import { StyledRecipeContainer } from '../../styled_components/EventPage/EventContainers';
 
 const Recipe = ({ recipe, user_id, eventID }) => {
     const [, dispatch] = useStateValue();
     let userSubmitted = recipe.full_name ? null : user_id;
     return (
-        <>
+        <StyledRecipeContainer>
             <Icon
                 size='small'
                 name={recipe.full_name ? 'times' : 'check'}
@@ -31,7 +32,7 @@ const Recipe = ({ recipe, user_id, eventID }) => {
                 }}
             />
             {recipe.recipe_name} - {recipe.full_name || ''}
-        </>
+        </StyledRecipeContainer>
     );
 };
 
