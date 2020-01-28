@@ -31,7 +31,9 @@ const Recipe = ({ recipe, user_id, eventID }) => {
                     });
                 }}
             />
-            {recipe.recipe_name} - {recipe.full_name || ''}
+            <span aria-label='recipe item'>
+                {recipe.recipe_name} - {recipe.full_name || ''}
+            </span>
         </StyledRecipeContainer>
     );
 };

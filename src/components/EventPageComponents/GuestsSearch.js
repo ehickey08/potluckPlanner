@@ -32,6 +32,7 @@ const GuestsSearch = ({ eventID }) => {
                 value={userSearch}
                 placeholder='Search users'
                 onChange={e => setUserSearch(e.target.value)}
+                aria-label="search user input"
             />
             {event.errorMessage && <h2>{event.errorMessage}</h2>}
             <div>

@@ -29,6 +29,7 @@ const LoginForm = props => {
 
     return (
         <StyledLoginForm
+            aria-label='login-form'
             onSubmit={e => {
                 e.preventDefault();
                 loginAction(dispatch, user);
@@ -42,6 +43,7 @@ const LoginForm = props => {
                     autoComplete='off'
                     value={user.username}
                     onChange={handleChange}
+                    aria-label='username'
                 />
                 <span data-placeholder='Username' />
             </div>
@@ -53,10 +55,14 @@ const LoginForm = props => {
                     placeholder='Password'
                     value={user.password}
                     onChange={handleChange}
+                    aria-label='password'
                 />
                 <span data-placeholder='Password' />
             </div>
-            <LoginButton disabled={login.isLoginLoading} type='submit'>
+            <LoginButton
+                disabled={login.isLoginLoading}
+                aria-label='login-button'
+                type='submit'>
                 Login
             </LoginButton>
         </StyledLoginForm>

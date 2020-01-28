@@ -14,10 +14,11 @@ const User = ({ user, eventID }) => {
                     user_id: user.user_id,
                     attending: false,
                 })
-            }>
+            }
+            aria-label="potential guest container">
             <Icon name='user' />
-            <span>{user.full_name}</span>
-            <span>{user.username}</span>
+            <span aria-label='full name'>{user.full_name}</span>
+            <span aria-label='username'>{user.username}</span>
         </StyledUserContainer>
     );
 };

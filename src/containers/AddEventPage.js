@@ -51,6 +51,7 @@ const AddEventForm = props => {
         value={event.event_name}
         onChange={event => eventInputHandler(event)}
         placeholder="Event Name"
+        aria-label="event name"
       />
       <StyledInput
         name="date"
@@ -59,6 +60,7 @@ const AddEventForm = props => {
         min={today}
         value={event.date}
         onChange={event => eventInputHandler(event)}
+        aria-label='event date'
       />
       <StyledInput
         name="time"
@@ -66,6 +68,7 @@ const AddEventForm = props => {
         required
         value={event.time}
         onChange={event => eventInputHandler(event)}
+        aria-label='event time'
       />
       <StyledInput
         name="description"
@@ -74,6 +77,7 @@ const AddEventForm = props => {
         value={event.description}
         onChange={event => eventInputHandler(event)}
         placeholder="Description"
+        aria-label = 'event description'
       />
       <StyledInput
         name="address"
@@ -82,6 +86,7 @@ const AddEventForm = props => {
         value={event.address}
         onChange={event => eventInputHandler(event)}
         placeholder="Street Address"
+        aria-label = 'event address'
       />
       <StyledInput
         name="city"
@@ -90,6 +95,7 @@ const AddEventForm = props => {
         value={event.city}
         onChange={event => eventInputHandler(event)}
         placeholder="City"
+        aria-label='event city'
       />
       <StyledInput
         name="state"
@@ -98,8 +104,9 @@ const AddEventForm = props => {
         value={event.state}
         onChange={event => eventInputHandler(event)}
         placeholder="State"
+        aria-label='event state'
       />
-      <button type="submit">Submit</button>
+      <button type="submit" aria-label='create event'>Submit</button>
     </StyledEventForm>
   );
 };

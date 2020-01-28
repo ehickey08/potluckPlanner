@@ -31,16 +31,17 @@ const RecipesContainer = ({ recipes, user_id, eventID, isHost }) => {
                     />
                 ))}
             {isHost && (
-                <form onSubmit={e => addNewRecipe(e)}>
+                <form onSubmit={e => addNewRecipe(e)} aria-label="add recipe">
                     <input
                         type='text'
+                        aria-label='new recipe input'
                         value={recipe.recipe_name}
                         placeholder='Add Dish'
                         onChange={e =>
                             setRecipe({ recipe_name: e.target.value })
                         }
                     />
-                    <button onSubmit={e => addNewRecipe(e)}>Add Dish</button>
+                    <button onSubmit={e => addNewRecipe(e)} aria-label='add recipe button'>Add Dish</button>
                 </form>
             )}
         </StyledRecipesContainer>
